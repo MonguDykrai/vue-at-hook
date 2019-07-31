@@ -1,29 +1,37 @@
-# at-hook
+# vue-at-hook
 
-## Project setup
-```
-yarn install
-```
+```html
+<!-- Parent.vue -->
+<template>
+  <div class="parent">
+    <Child @hook:mounted="childMounted" />
+  </div>
+</template>
 
-### Compiles and hot-reloads for development
-```
-yarn run serve
-```
-
-### Compiles and minifies for production
-```
-yarn run build
-```
-
-### Run your tests
-```
-yarn run test
-```
-
-### Lints and fixes files
-```
-yarn run lint
+<script>
+export default {
+  name: "Parent",
+  methods: {
+    childMounted() {
+      console.log(`childMounted`)
+    }
+  }
+}
+</script>
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+```html
+<!-- Child.vue -->
+<template>
+  <div class="child">
+  </div>
+</template>
+
+<script>
+export default {
+  name: "Child"
+}
+</script>
+```
+
+https://github.com/MonguDykrai/vue-at-hook.git
